@@ -25,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ExtendWith(ResultAnalyzer.class)
 class MainTest {
-
+                                                                                                                                                  
     private final DeveloperTax developerTax = new DeveloperTax();
     @Autowired
     private Environment env;
@@ -192,7 +192,7 @@ class MainTest {
     @DisplayName("DeveloperController:DeveloperMapCheck")
     @Order(1)
     void developersMapShouldNotBeNullAfterInitialization() {
-        assertNotNull(controller.developers, "The developers map should be initialized (not null) after @PostConstruct");
+        assertNotNull(controller.getDevelopers(), "The developers map should be initialized (not null) after @PostConstruct");
     }
 
     @Test
